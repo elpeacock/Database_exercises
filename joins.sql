@@ -13,7 +13,7 @@ JOIN dept_manager AS dm
   ON dm.emp_no = e.emp_no
 JOIN departments AS d
   ON d.dept_no = dm.dept_no
-WHERE dm.to_date = '9999-01-01';
+WHERE dm.to_date > curdate();
 
 /*find the name of all departments currently managed by women*/
 SELECT d.dept_name AS 'Department Name', CONCAT(e.first_name, ' ', e.last_name) AS 'Deparment Manager'
@@ -22,7 +22,7 @@ JOIN dept_manager AS dm
   ON dm.emp_no = e.emp_no
 JOIN departments AS d
   ON d.dept_no = dm.dept_no
-WHERE dm.to_date = '9999-01-01'  
+WHERE dm.to_date > curdate()  
   AND e.gender = 'F'; 
 
 /*find the current titles of employees currently working in the Customer Service department*/
@@ -36,8 +36,8 @@ JOIN titles AS t
 JOIN departments AS d
   ON d.dept_no = de.dept_no 
 WHERE d.dept_name = 'Customer Service' 
-  AND t.to_date = '9999-01-01' 
-  AND de.to_date = '9999-01-01'
+  AND t.to_date > curdate() 
+  AND de.to_date > curdate()
 GROUP BY t.title;
 
 /*find the current salary of all current managers*/
@@ -50,8 +50,8 @@ JOIN salaries AS s
   ON s.emp_no = e.emp_no
 JOIN departments AS d
   ON d.dept_no = dm.dept_no
-WHERE dm.to_date = '9999-01-01' 
-  AND s.to_date = '9999-01-01';
+WHERE dm.to_date > curdate() 
+  AND s.to_date > curdate();
 
 /*bonus - find the names of all the current employees, their department, and their current manager's name*/
 
@@ -65,7 +65,7 @@ JOIN dept_manager AS dm
   ON d.dept_no = dm.dept_no
 JOIN employees AS dme
   ON dme.emp_no = dm.emp_no
-WHERE dm.to_date = '9999-01-01'
-  AND de.to_date = '9999-01-01';
+WHERE dm.to_date > curdate()
+  AND de.to_date > curdate();
   
 
