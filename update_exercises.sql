@@ -12,7 +12,7 @@ SELECT artist, name, release_date FROM albums WHERE release_date < 1980\G
 
 UPDATE albums
 SET release_date = (release_date - 100) 
-WHERE release_date <1980;
+WHERE release_date < 1980;
 
 SELECT artist, name, release_date FROM albums WHERE release_date < 1900\G
 
