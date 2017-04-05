@@ -32,6 +32,6 @@ SELECT first_name, last_name, count(*)
 FROM employees 
 WHERE last_name LIKE '%Q%' AND last_name NOT LIKE '%QU%'
 GROUP BY first_name, last_name
-ORDER BY count(last_name) DESC;
+ORDER BY count(*) DESC;
 
 
