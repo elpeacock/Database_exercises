@@ -63,5 +63,5 @@ VALUES
 
 ('Santana','Supernatural',1999,20500000,'Rock'),
 
-('Guns N Roses','Appetite for Destruction',1987,21300000,'Heavy metal, hard rock')
+('Guns N Roses','Appetite for Destruction',1987,21300000,'Heavy metal, hard rock');
 
