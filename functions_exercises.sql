@@ -12,7 +12,7 @@ FROM employees
 WHERE last_name LIKE 'e%' OR last_name LIKE '%e'
 ORDER BY emp_no;
 
-SELECT concat(first_name, ' ', last_name)
+SELECT concat(first_name, ' ', last_name) as 'full name'
 FROM employees 
 WHERE last_name LIKE 'e%e'
 ORDER BY emp_no;
